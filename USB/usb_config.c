@@ -119,7 +119,8 @@
 #define USBD_STRDESC_MAN            L"CMSIS-DAP by ARM"
 #define USBD_STRDESC_PROD           L"CMSIS-DAP"
 #define USBD_STRDESC_SER_ENABLE     1
-#define USBD_STRDESC_SER            L"0001A0000000"
+//#define USBD_STRDESC_SER            L"BluePill_PB7_#1"
+#define USBD_STRDESC_SER            L"V2A_SWO_PB7_#2"
 
 //   <e0> Class Support
 //     <i> Enables USB Device Class specific Requests
