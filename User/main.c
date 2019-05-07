@@ -570,17 +570,21 @@ uint8_t RST_Transfer(uint32_t request, uint32_t data)
 void vResetTarget(uint8_t bit)
 {
   uint32_t i;
-  //soft-reset for Cortex-M
-  RST_Transfer(0x00000CC5, 0xE000ED0C); //set AIRCR address
-  for (i=0; i<100; i++);
-  RST_Transfer(0x00000CDD, 0x05FA0007); //set RESET data
-  for (i=0; i<100; i++);
-  RST_Transfer(0x00000CC5, 0xE000ED0C); //repeat
-  for (i=0; i<100; i++);
-  RST_Transfer(0x00000CDD, 0x05FA0007);
   
   if (bit & 1)  PIN_nRESET_HIGH();
-  else          PIN_nRESET_LOW();
+	
+  else          
+	{
+		PIN_nRESET_LOW();
+		//soft-reset for Cortex-M
+		RST_Transfer(0x00000CC5, 0xE000ED0C); //set AIRCR address
+		for (i=0; i<100; i++);
+		RST_Transfer(0x00000CDD, 0x05FA0007); //set RESET data
+		for (i=0; i<100; i++);
+		//RST_Transfer(0x00000CC5, 0xE000ED0C); //repeat
+		//for (i=0; i<100; i++);
+		//RST_Transfer(0x00000CDD, 0x05FA0007);
+	}
 }
 
 
