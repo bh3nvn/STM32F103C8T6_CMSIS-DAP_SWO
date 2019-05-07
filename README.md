@@ -1,18 +1,10 @@
 # STM32F103C8T6_CMSIS-DAP_SWO
 -----------------------------
+基于RadioOperator移植的CMSIS-DAP V2.00修改     
+https://github.com/RadioOperator/STM32F103C8T6_CMSIS-DAP_SWO
 
-Based x893's code on: https://github.com/x893/CMSIS-DAP
-
-My contribution is:
-
-1. Upgrade CMSIS-DAP version to V2.00 .
-2. Enable SWO_UART function(USART1), no SWO_STREAM/SWO_MANCHESTER mode.
-3. CDC function improved(USART2).
-4. Added a Soft-Reset function for Cortex-M.
-5. Added BluePill board support, Remapped or unRemap (refer to Docs).
-6. Added STLINK_V2A, STLINK_V2B board support (refer to Docs).
-7. Minor changes, e.g. LED handling, project files re-group......
-
-( *.bin files, converted from Hex, not tested.)
-
-Thanks.
+我的改进：    
+1、增加SWO_PB7宏定义可以直接使用原来STLINK V2的SWIM口作为SWO。    
+2、修改vResetTarget()函数，复位只执行一次。    
+3、使用序列号标记硬件版本和SWO引脚（需自己根据实际情况修改）。    
+4、更新USB_CM3.lib文件。    
