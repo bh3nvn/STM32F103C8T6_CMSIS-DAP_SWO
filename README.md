@@ -1,6 +1,6 @@
 # STM32F103C8T6_CMSIS-DAP_SWO
 -----------------------------
-基于RadioOperator移植的CMSIS-DAP V2.00修改
+基于RadioOperator移植的CMSIS-DAP V2.00修改     
 https://github.com/RadioOperator/STM32F103C8T6_CMSIS-DAP_SWO
 
 我的改进：    
